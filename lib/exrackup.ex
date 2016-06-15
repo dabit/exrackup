@@ -1,4 +1,4 @@
-defmodule Erlserver do
+defmodule Exrackup do
   use Export.Ruby
 
   def call do

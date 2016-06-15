@@ -1,8 +1,8 @@
-defmodule Erlserver.Mixfile do
+defmodule Exrackup.Mixfile do
   use Mix.Project
 
   def project do
-    [app: :erlserver,
+    [app: :exrackup,
      version: "0.0.1",
      elixir: "~> 1.2",
      build_embedded: Mix.env == :prod,

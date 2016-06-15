@@ -1,4 +1,4 @@
-defmodule ErlserverTest do
+defmodule ExrackupTest do
   use ExUnit.Case
   doctest Erlserver
 
