@@ -1,6 +1,6 @@
 require Logger
 
-defmodule Server do
+defmodule Exrackup.Server do
   def accept(port) do
     {:ok, socket} = :gen_tcp.listen(port,
     [:binary, packet: :line, active: false, reuseaddr: true])
@@ -10,7 +10,7 @@ defmodule Server do
 
   defp loop_acceptor(socket) do
     {:ok, client} = :gen_tcp.accept(socket)
-    {:ok, pid} = Task.Supervisor.start_child(Server.TaskSupervisor, fn -> serve(client) end)
+    {:ok, pid} = Task.Supervisor.start_child(Exrackup.TaskSupervisor, fn -> serve(client) end)
     :ok = :gen_tcp.controlling_process(client, pid)
     loop_acceptor(socket)
   end

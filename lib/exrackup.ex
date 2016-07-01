@@ -11,11 +11,11 @@ defmodule Exrackup do
     import Supervisor.Spec
 
     children = [
-      supervisor(Task.Supervisor, [[name: Server.TaskSupervisor]]),
-      worker(Task, [Server, :accept, [4001]])
+      supervisor(Task.Supervisor, [[name: Exrackup.TaskSupervisor]]),
+      worker(Task, [Exrackup.Server, :accept, [4001]])
     ]
 
-    opts = [strategy: :one_for_one, name: Server.Supervisor]
+    opts = [strategy: :one_for_one, name: Exrackup.Supervisor]
     Supervisor.start_link(children, opts)
   end
 end
