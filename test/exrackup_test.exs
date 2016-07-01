@@ -1,6 +1,5 @@
 defmodule ExrackupTest do
   use ExUnit.Case
-  doctest Erlserver
 
   test "the truth" do
     assert 1 + 1 == 2
